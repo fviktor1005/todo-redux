@@ -4,6 +4,8 @@ import ListActions from './ListActions';
 import itemsFromJson from '../data/items';
 import '../polyfills/findIndex';
 
+import '../App.css';
+
 class AppToDo extends Component {
     constructor(){
         super();
@@ -16,7 +18,7 @@ class AppToDo extends Component {
         };
         const localItems = localStorage.getItem('state');
         const state = localItems === null ? firstState : {...JSON.parse(localItems)};
-        console.log(state);
+        //console.log(state);
         this.state = state;
     }
 
@@ -109,12 +111,11 @@ class AppToDo extends Component {
     render() {
         return (
             <div className="container">
-                <header className="App-header">
-                    <h1 className="App-title">Demo app</h1>
-                </header>
 
-                <div className="col-9">
-                    <div className="input-group input-group-lg mb-5">
+                <div className="col-lg-9 col-sm-12 p-1">
+
+                    <h1 className="mt-1">Simple todo's app</h1>
+                    <div className="input-group input-group-lg mb-3">
                         <input type="text" className="form-control"
                                value={this.state.title} onChange={this.onChange} onKeyPress={this.handleKeyPress}
                                aria-label="Large" aria-describedby="inputGroup-sizing-sm"/>
