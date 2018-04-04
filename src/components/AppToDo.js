@@ -57,18 +57,14 @@ class AppToDo extends Component {
 
         this.setState({
             items: [...this.state.items, newItem],
-            filtered: [...this.state.items, newItem],
             title: '',
             sortBy: ''
         })
     }
 
     removeItem = (id) => {
-        let items = this.state.items;
-        items = items.filter((item)=> {
-            return item.id !== id;
-        });
-        this.setState({items, filtered: []});
+        let items = this.state.items.filter(item => item.id !== id);
+        this.setState({items});
     }
 
     componentWillReceiveProps(nextProps) {
@@ -89,10 +85,6 @@ class AppToDo extends Component {
         return maxItem.id++;
     }
 
-    componentDidMount(){
-        this.getNextID();
-    }
-
     onChange = (event) => {
         this.setState({ title: event.target.value });
     }
@@ -111,7 +103,6 @@ class AppToDo extends Component {
     render() {
         return (
             <div className="container">
-
                 <div className="col-lg-9 col-sm-12 p-1">
 
                     <h1 className="mt-1">Simple todo's app</h1>

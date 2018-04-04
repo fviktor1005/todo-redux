@@ -4,8 +4,7 @@ const List = props => (
     <ul className="list-group">
         {
             props.items.filter(item => item.completed === props.showCompleted || !item.completed)
-                .map((item) =>
-                {
+                .map((item) => {
                 const btnClass = (item.completed) ? "btn-success" : "btn-outline-success";
 
                 const onChange = (event) => {
