@@ -1,1 +1,1 @@
-simple todos app with React 16 + ES6 + bootstrap 4
+simple todos app with React 16 + Redux + ES6 + bootstrap 4
