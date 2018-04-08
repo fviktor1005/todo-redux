@@ -6,6 +6,8 @@ const ListActions = (props)=> {
         props.sortTasks(sortBy);
     }
 
+    console.log(props.showCompleted);
+
     return(
         <div className="btn-group btn-group-toggle mb-3" data-toggle="buttons">
 
